@@ -2,12 +2,12 @@ package rules
 
 import "embed"
 
-//go:embed *.build_defs
+//go:embed all:build_defs
 var builtins embed.FS
 
 // AllAssets returns all assets embedded into the binary
 func AllAssets() ([]string, error) {
-	assets, err := builtins.ReadDir(".")
+	assets, err := builtins.ReadDir("build_defs")
 	if err != nil {
 		return nil, err
 	}

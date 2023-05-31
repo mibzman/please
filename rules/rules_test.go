@@ -21,7 +21,7 @@ func TestAllAssetsReturnsAListOfBuildDefinitionFiles(t *testing.T) {
 }
 
 func TestReadAssetReadsCorrectAsset(t *testing.T) {
-	output, err := ReadAsset("builtins.build_defs")
+	output, err := ReadAsset("build_defs/builtins.build_defs")
 
 	assert.NoError(t, err)
 	assert.Contains(t, string(output), "def build_rule")
